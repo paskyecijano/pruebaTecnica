@@ -1,6 +1,8 @@
 package com.pascualflores.pruebatecnica.dtos;
 
 import java.time.LocalDateTime;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Data;
 
@@ -8,14 +10,14 @@ import lombok.Data;
 @Builder
 public class PriceDto {
 
-    private Long id;
+    @JsonProperty("product_id")
+    private Long product;
+    @JsonProperty("brand_id")
+    private Long brand;
+    @JsonProperty("priceList_id")
+    private Long priceList;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
-    private Integer priority;
     private Double price;
-    private String curr;
 
-    private PriceListDto priceList;
-    private BrandDto brand;
-    private ProductDto product;
 }
